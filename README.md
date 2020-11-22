@@ -2,6 +2,7 @@
 
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/rdleal/go-async/async)](https://pkg.go.dev/github.com/rdleal/go-async/async)
 [![Go Report Card](https://goreportcard.com/badge/github.com/rdleal/go-async)](https://goreportcard.com/report/github.com/rdleal/go-async)
+[![codecov](https://codecov.io/gh/rdleal/go-async/branch/master/graph/badge.svg?token=Q9J1M7DS4A)](https://codecov.io/gh/rdleal/go-async)
 
 go-async provides utility functions for controlling asynchronous flow.
 
