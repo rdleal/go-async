@@ -261,8 +261,6 @@ func Concurrent(ctx context.Context, f FuncMap, options ...Option) (<-chan FuncR
 // There must be no cyclic dependency relationship between the functions. In case of cyclic dependency relationship an
 // ErrDependencyGraph is returned.
 //
-// params is an optional list of parameters to be passed to the functions without dependency.
-//
 // In case the first parameter of any function is of type context.Context, the ctx passed to Auto will be used
 // as the first argument of such function, but the ctx takes the lowest precedence in the following cases:
 //
