@@ -8,7 +8,7 @@ go-async provides utility functions for controlling asynchronous flow.
 
 Install the package:
 ```
-go get github.com/rafaeldias/go-async
+go get github.com/rdleal/go-async
 ``` 
 
 ## Usage
