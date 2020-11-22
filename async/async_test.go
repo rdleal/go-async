@@ -240,7 +240,7 @@ func TestWaterfall(t *testing.T) {
 			name: "ExecWithContextTimeout",
 			ctx:  ctxWithTimeout(context.Background(), 5*time.Millisecond),
 			fns: Funcs{
-				func() { time.Sleep(12 * time.Millisecond) },
+				func() { time.Sleep(50 * time.Millisecond) },
 				func() string { return "unwanted function call" },
 			},
 			wantErr:    context.DeadlineExceeded,
@@ -634,7 +634,7 @@ func TestAuto(t *testing.T) {
 			name: "ExecWithContextTimeout",
 			ctx:  ctxWithTimeout(context.Background(), 5*time.Millisecond),
 			fns: FuncMap{
-				"func": func() { time.Sleep(10 * time.Millisecond) },
+				"func": func() { time.Sleep(50 * time.Millisecond) },
 				"dependent": DependsOn("func").To(func() {
 					t.Error("Got called; want it not to be called.")
 				}),
