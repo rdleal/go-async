@@ -73,7 +73,7 @@ func (v Values) IntAt(i int) (n int64, ok bool) {
 	return
 }
 
-// Interface returns i-th v's current value as an interface{}.
+// InterfaceAt returns i-th v's current value as an interface{}.
 // The ok return value assumes false if either i=th v is not valid or the interface cannot be used without panicking.
 // It panics if i is out of v's range.
 func (v Values) InterfaceAt(i int) (r interface{}, ok bool) {

@@ -190,7 +190,7 @@ var goroutinesCount int32
 // as the first argument of such functions, unless the first params item is a context.Context, in which case it takes
 // precedence over the ctx and will be used instead.
 //
-// options is an optional list of Options for configuring Concurrent execution. The following options can be used with Concurret:
+// options is an optional list of Options for configuring Concurrent execution. The following options can be used with Concurrent:
 //   - WithArgs values will be passed to all Concurrent functions.
 //   - WithGoroutineNum value will be used to limit the number of goroutines created by Concurrent.
 //
