@@ -131,7 +131,7 @@ func (f FuncResult) Returned() (Values, error) {
 // If the last or only return value of a function is of type error, this value is not passed to the next function.
 //
 // If the first parameter of any function is of type context.Context, the ctx passed to Waterfall will be used
-// as the first argument of such functions, unless a previous function returns a context as its first value,
+// as the first argument of such functions, unless a previous function returns a context as its first return value,
 // in such cases the returned context will be used instead.
 //
 // The returned channel will receive either the last function return values or an error, if any.
@@ -187,8 +187,8 @@ var goroutinesCount int32
 // For Concurrent to identify an error, the last or only return value of a function must evaluates to a non-nil error.
 //
 // In case the first parameter of any function is of type context.Context, the ctx passed to Concurrent will be used
-// as the first argument of such functions, unless the first params item is a context.Context, in which case it takes
-// precedence over the ctx and will be used instead.
+// as the first argument of such functions, unless a WithArgs Option is used and its first argument is a context.Context,
+// in which case it takes precedence over the ctx and will be used instead.
 //
 // options is an optional list of Options for configuring Concurrent execution. The following options can be used with Concurrent:
 //   - WithArgs values will be passed to all Concurrent functions.
@@ -264,7 +264,8 @@ func Concurrent(ctx context.Context, f FuncMap, options ...Option) (<-chan FuncR
 // In case the first parameter of any function is of type context.Context, the ctx passed to Auto will be used
 // as the first argument of such function, but the ctx takes the lowest precedence in the following cases:
 //
-// 1) For non-dependent functions: the first params item is a context.Context, in such cases that context will be used instead.
+// 1) For non-dependent functions: a WithArgs Option is used and its first argument is a context.Context, in such cases
+// that context will be used instead.
 //
 // 2) For dependent functions: the first function it depends on returns a context.Context as its first return value,
 // in such cases the returned context will be used instead.
